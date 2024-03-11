@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Summary</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body>
+    <section class="nav header">
+        <h1>Your Budgeting Summary</h1>
+    </section>
+    <section class="middlewrapper">
+        <section class="middle p1">
+            <section class="values">
+                <section id="one" class="mainval">
+                    <h2>50%</h2>
+                    <p>Necessity</p>
+                    <span id="necessity"></span>
+                </section>
+                <section id="two" class="mainval">
+                    <h2>30%</h2>
+                    <p>Life</p>
+                    <span id="life"></span>
+                </section>
+                <section id="three" class="mainval">
+                    <h2>20%</h2>
+                    <p>Savings</p>
+                    <span id="savings"></span>
+                </section>
+            </section>
+            <section class="budgetOver" id="middleValue">
+                <h2 id="sumBudget">You are <span id="ovUn"></span> budget</h2>
+            </section>
+            <section class="middlebottom">
+                <section class="side">
+                    <p>You should be spending no more than <span></span> on housing.
+                        <br><br>
+                        If you're spending too much on transport, try strategically going to places where you can
+                        complete multiple tasks with minimal driving.
+                        <br><br>
+                        If you're running low on money, decrease the amount you're putting in savings.
+                        <br><br>
+                        Try maximising the products you use in your hobbies to make less purchases: Save the scraps!
+                    </p>
+                </section>
+                <img src="icon.svg" class="down">
+                <section class="side">
+                    <p>Utilise bank rewards.
+                        <br><br>
+                        Money is wasted on uneaten food. When in a tight spot, focus on meal planning foods you know
+                        you'll like to make the most of leftovers!
+                        <br><br>
+                        Keep the lights off until it gets dark, and only keep them on when you're in the room.
+                        <br><br>
+                        Invest in entertainment that charges monthly (such as a single streaming service) and meet with
+                        friends at home instead of spending money out!
+                    </p>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section class="end">
+        <section class="results">
+
+            <section class="result1 center">
+                <section class="spending p1">
+                    <p>Your Current Spending</p>
+                </section>
+
+                <section class="p1 table numtable">
+                    <section id="table1" class="table1">
+                        <!-- section1 -->
+                        <h3>Necessities</h3>
+                        <p>Housing</p>
+                        <p>Utilities</p>
+                        <p>Insurance</p>
+                        <p>Debt Payments</p>
+                        <!-- section2 -->
+                        <h3>Life</h3>
+                        <p>Transport</p>
+                        <p>Hobbies</p>
+                        <p>Entertainment</p>
+                        <p>Food</p>
+                        <!-- section3 -->
+                        <h3>Savings</h3>
+                        <p>Savings</p>
+                        <p>Retirement Fund</p>
+                        <p>Just-In-Case</p>
+                    </section>
+                    <section id="table2" class="table2">
+                        <hr>
+                        <span id="curnes"></span>
+                        <span id="curhou"></span>
+                        <span id="curin"></span>
+                        <span id="curdeb"></span>
+                        <!-- section2 -->
+                        <hr>
+                        <span id="curlif"></span>
+                        <span id="curtrans"></span>
+                        <span id="curhob"></span>
+                        <span id="curfood"></span>
+                        <!-- section3 -->
+                        <hr>
+                        <span id="cursav"></span>
+                        <span id="currer"></span>
+                        <span id="curcase"></span>
+                    </section>
+                </section>
+            </section>
+
+            <section class="result2 center">
+                <section class="spending p1 ">
+                    <p>Your Budgeted Spending</p>
+                </section>
+                <section class="p1 table numtable">
+                    <section id="table1" class="table1">
+                        <!-- section1 -->
+                        <h3>Necessities</h3>
+                        <p>Housing</p>
+                        <p>Utilities</p>
+                        <p>Insurance</p>
+                        <p>Debt Payments</p>
+                        <!-- section2 -->
+                        <h3>Life</h3>
+                        <p>Transport</p>
+                        <p>Hobbies</p>
+                        <p>Entertainment</p>
+                        <p>Food</p>
+                        <!-- section3 -->
+                        <h3>Savings</h3>
+                        <p>Savings</p>
+                        <p>Retirement Fund</p>
+                        <p>Just-In-Case</p>
+                    </section>
+                    <section id="table2" class="table2">
+                        <hr>
+                        <span id="newnes"></span>
+                        <span id="newhou"></span>
+                        <span id="newin"></span>
+                        <span id="newdeb"></span>
+                        <!-- section2 -->
+                        <hr>
+                        <span id="newlif"></span>
+                        <span id="newtrans"></span>
+                        <span id="newhob"></span>
+                        <span id="newfood"></span>
+                        <!-- section3 -->
+                        <hr>
+                        <span id="newsav"></span>
+                        <span id="newrer"></span>
+                        <span id="newcase"></span>
+                    </section>
+                </section>
+
+            </section>
+        </section>
+    </section>
+    <section class="back">
+        <a href="index.html">
+            <button class="backBtn" id="backBtn">Back</button>
+        </a>
+    </section>
+</body>
+
+</html>

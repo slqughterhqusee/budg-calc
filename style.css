@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital@0;1&display=swap');
+
+.p1 {
+    background-color: #F8FDFF;
+    border: 4px solid #71DEC4;
+    border-radius: 50px;
+    margin: 30px 30px 30px 30px;
+    padding: 1em;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.p1 p {
+    width: 90%;
+}
+
+.header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: 30vh;
+    align-items: center;
+    font-size: 2em;
+    background: linear-gradient(to right top, #E5FFDC, #CCF9BC, #71DEC4);
+    border: 1px solid black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Prompt', Helvetica, sans-serif;
+}
+
+#root {
+    display: flex;
+    flex-flow: row wrap;
+    overflow-y: scroll;
+    margin: .3em;
+    height: 100%;
+    width: 95%;
+}
+
+div section {
+    margin: .5em;
+}
+
+h2 {
+    margin-bottom: .2em;
+}
+
+h3 {
+    margin: .5em;
+}
+
+.leftwrapper {
+    padding-left: 5vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    width: 35vw;
+}
+
+.leftbottom,
+.lefttop {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.hold{
+    width: 65%;
+}
+
+.leftLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 1em;
+    width: 30%;
+    max-width: 95px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: rgb(104, 235, 222);
+    font-size: .8em;
+}
+
+.wrapcontain {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.expenses {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.expenses p {
+    margin: 0.5em;
+}
+
+.expenses.note{
+    align-items: flex-start;
+}
+
+.submit {
+    height: 1.5em;
+    width: 5em;
+    border-radius: 50px;
+    border: 1px solid black;
+    background-image: linear-gradient(to right, #E4FFDA, #71DEC4);
+    color: rgb(29, 29, 59);
+    font-size: .8em;
+    margin: 1.5em;
+    align-self: center;
+}
+
+.submit:hover{
+    background-image: linear-gradient(to right, #ABF9DC, #17BD95);
+    color: white;
+    border-color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.income {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    width: 90%;
+}
+
+.jobs {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainval {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.mainval h2 {
+    font-size: 3rem;
+    color: #1CBE84;
+}
+
+#ovUn {
+    color: #1CBE84;
+}
+
+.budgetOver {
+    font-size: 2.5rem;
+}
+
+.values {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.side {
+    padding: 0.5em;
+    box-sizing: border-box;
+    border-radius: 15px;
+    width: 41%;
+    border: 2px solid #71DEC4;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.side p{
+    width: 100%;
+}
+
+.middle {
+    width: 70em;
+}
+
+.middlewrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.middlebottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60em;
+    margin-top: 1em;
+}
+
+.end {
+    display: flex;
+    flex-direction: row;
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+button {
+    width: 7em;
+    height: 3em;
+    border-radius: 50px;
+    border: 1px solid black;
+    background-image: linear-gradient(to right, #E4FFDA, #71DEC4);
+    color: rgb(29, 29, 59);
+    font-size: 1.1em;
+}
+
+button:hover {
+    background-image: linear-gradient(to right, #ABF9DC, #17BD95);
+    color: white;
+    border-color: white;
+}
+
+.backBtn {
+    align-self: flex-end;
+    background-image: linear-gradient(to right, #ABF9DC, #17BD95);
+    color: rgb(69, 36, 36);
+    width: 15em;
+}
+
+.backBtn:hover {
+    background-image: linear-gradient(to right, #E4FFDA, #71DEC4);
+    border-color: white;
+    color: white;
+}
+
+.note button {
+    margin-top: 3em;
+}
+
+.table {
+    width: 100%;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.numtable {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 30em;
+}
+
+.spending {
+    width: 30em;
+    height: 1em;
+    margin: 0;
+    text-align: center;
+}
+
+.roothold {
+    height: 5em;
+    padding: 0;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.note {
+    width: 20%;
+    text-align: left;
+}
+
+.note h3 {
+    margin-left: 0;
+}
+
+.expenses input {
+    margin-bottom: .5em;
+}
+
+.back {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    margin: 2em;
+}
+
+.rightwrapper {
+    width: 70%;
+}
+
+.table1>p {
+    margin-left: 3em;
+}
+
+hr {
+    border-top: 2px solid #71DEC4;
+    width: 15em;
+}
+
+.hide {
+    /* display: none; */
+}
+
+.down{
+    width: 4%;
+    align-self: flex-end;
+    margin-bottom: .5em;
+}
+
+/*for phone */
+@media only screen and (max-width:640px){
+    .header {
+        width: 100%;
+        text-align: center;
+        font-size: 1.1em;
+    }
+
+    .p1{
+        font-size: .7em;
+    }
+
+    .leftwrapper {
+        display:none;
+    }
+
+    .wrapcontain{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rightwrapper{
+        width:100%;
+    }
+
+    #root{
+        width: 75%;
+    }
+
+    .income{
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .frame {
+        align-items: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    .row{
+        flex-flow: row wrap;
+    }
+
+    form {
+        flex-flow: row wrap;
+        width: 100%;
+    }
+
+    .expenses{
+        width: auto;
+        margin: 0;
+        height: auto;
+    }
+
+    .note {
+        width: auto;
+        margin-top: 1.5em;
+    }
+
+    .note button{
+        align-self: center;
+    }
+
+    .note a{
+        align-self: center;
+        margin: 0;
+    }
+
+    .middlewrapper{
+        width: 100%;
+    }
+
+    .middle {
+        width: 85%;
+        height: auto;
+    }
+
+    .middlebottom{
+        display: none;
+    }
+
+    .mainval h2 {
+        font-size: 3em;
+    }
+
+    #sumBudget {
+        font-size: .5em;
+    }
+
+    .results {
+        flex-flow: row wrap;
+        width: 100%;
+    }
+
+    .spending {
+        width: 80%;
+    }
+
+    .table {
+        width: 80%;
+    }
+
+    .table1, .table2 {
+        padding: .1em;
+    }
+
+    hr{
+        width: 5em;
+    }
+
+    .back {
+        justify-content: center;
+    }
+
+    button::selection {
+        background-image: linear-gradient(to right, #ABF9DC, #17BD95);
+        color: white;
+        border-color: white;
+    }
+
+    .backBtn::selection {
+        background-image: linear-gradient(to right, #E4FFDA, #71DEC4);
+        border-color: white;
+        color: white;
+    }
+}
+
+/*for laptop*/
+@media only screen and (max-width: 1960px){
+    body {
+        font-size: .8rem;
+    }
+
+    header {
+        width:100%;
+    }
+
+    .middlewrapper{
+        width:100%;
+    }
+
+    .middle{
+        width: 80%;
+    }
+
+    .middlebottom{
+        width:90%;
+    }
+
+    .results{
+        width:100%;
+        flex-flow: row wrap;
+    }
+
+    .results1, .results2{
+        width: 45%;
+    }
+
+    .spending{
+        width: 60%;
+    }
+
+    .table{
+        width:80%;
+    }
+}

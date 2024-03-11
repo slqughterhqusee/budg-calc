@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="header">
+        <h1>Need help budgeting?</h1>
+    </section>
+    <br>
+    <section class="p1">
+        <p>The traditional 50/30/20 budgeting strategy distributes money towards needs, wants, and savings. However,
+            sometimes life isn't cut into such specific categories. Many needs and wants overlap; living an enriching
+            life is important. This budget calculator will replace 'wants' with 'life', helping to shift your view.
+            Instead of cutting fun things out because they're 'less important', think about what contributes to the cost
+            of them!</p>
+    </section>
+    <section class="p1">
+        <p>If you don't have a job, but you want to see how life might look like with one, feel free to pick from the
+            list! Behind the scenes, we first determine your monthly income. Next, we deduct 32.65% in taxes (an
+            estimate determined by the EECU). Fun fact: Using the percent strategy, your maximum housing payment should
+            be only 33% of your post-tax monthly income! </p>
+    </section>
+    <section class="wrapcontain">
+        <section class="leftwrapper">
+
+            <section class="leftbottom">
+                <div class="hold">
+                    <canvas id="budgSpend1" class="pie"></canvas>
+                </div>
+
+                <section class="leftLabel">
+                    <p>This is how your planned spending looks</p>
+                </section>
+
+            </section>
+
+        </section>
+        <section class="rightwrapper">
+
+
+            <section class="p1">
+                <p>If you already have a job, feel free to skip this part and directly input your salary! If not, feel
+                    free to look through this list and input a value from there!</p>
+            </section>
+            <section class="p1 roothold">
+                <div id="root"></div>
+            </section>
+            <form class="p1 income" id="incform">
+                <label for="salary">Current Pre-Tax Annual Salary:</label><input name="salary" type="text" id="salary">
+                <label for="addInc">Additional Income (Monthly): </label><input name="addInc" type="text" id="addinc">
+                <input type="submit" class="submit">
+            </form>
+            <section class="p1 hide frame" id="frame0">
+                <h2>
+                    How much are you currently spending?
+                </h2>
+                <section class="row">
+                    <form id="form1">
+                        <section class="expenses">
+                            <h3> Necessities </h3>
+                            <label>Housing <br><input type="text"></label>
+                            <label>Utilities <br><input type="text"></label>
+                            <label>Insurance <br><input type="text"></label>
+                            <label>Debt Payments<br> <input type="text"></label>
+                        </section>
+
+                        <section class="expenses">
+                            <h3> Life </h3>
+                            <label>Transport<br> <input type="text"></label>
+                            <label>Hobbies <br> <input type="text"></label>
+                            <label>Going Out <br> <input type="text"></label>
+                            <label>Food <br> <input type="text"></label>
+                        </section>
+
+                        <section class="expenses">
+                            <h3> Savings </h3>
+                            <label>Savings <br> <input type="text"></label>
+                            <label>Retirement Fund <br><input type="text"></label>
+                            <label>Just-In-Case<br> <input type="text"></label>
+                            <input type="submit" class="submit">
+                        </section>
+                    </form>
+                    <section class="expenses note">
+                        <p>
+                            Leaving things you don't know off the top of your head blank is OK!
+                        </p>
+                        <p>
+                            This will not affect your budgeting results.
+                        </p>
+                    </section>
+                </section>
+            </section>
+            <br><br>
+
+            <section class="p1 frame hide" id="frame1">
+                <h2>
+                    How are you going to change your spending?
+                </h2>
+                <section class="row">
+                    <form id="form2">
+                        <section class="expenses">
+                            <h3> Necessities </h3>
+                            <label>Housing <br><input type="text" id="housing2"></label>
+                            <label>Utilities <br><input type="text" id="util2"></label>
+                            <label>Insurance <br><input type="text" id="insur2"></label>
+                            <label>Debt Payments<br> <input type="text" id="debt2"></label>
+                        </section>
+
+                        <section class="expenses">
+                            <h3> Life </h3>
+                            <label>Transport<br> <input type="text" id="trans2"></label>
+                            <label>Hobbies <br><input type="text" id="hobb2"></label>
+                            <label>Going Out <br> <input type="text" id="out2"></label>
+                            <label>Food <br> <input type="text" id="food2"></label>
+                        </section>
+
+                        <section class="expenses">
+                            <h3> Savings </h3>
+                            <label>Savings <br> <input type="text" id="sav2"></label>
+                            <label>Retirement Fund <br><input type="text" id="retir2"></label>
+                            <label>Just-In-Case<br> <input type="text" id="extra2"></label>
+                            <input type="submit" class="submit">
+                        </section>
+                    </form>
+
+                    <section class="expenses note">
+
+                        <p>
+                            Your monthly budget plan is:
+                        </p>
+
+                        <h3>Necessities:</h3>
+                        <span id="need"></span>
+
+                        <h3>Life:</h3>
+                        <span id="want"></span>
+
+                        <h3>Savings</h3>
+                        <span id="savings"></span>
+
+                        <a href="index2.html">
+                            <button>
+
+                                Summary
+
+                            </button>
+                        </a>
+                    </section>
+                </section>
+
+            </section>
+
+
+        </section>
+
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
