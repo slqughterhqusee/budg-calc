@@ -162,6 +162,9 @@ getId('incform').addEventListener('submit', function (input) {
     getId('need').innerText = `$${Math.round(total * .5)}`;
     getId('want').innerText = `$${Math.round(total * .3)}`;
     getId('savings').innerText = `$${Math.round(total * .2)}`;
+    getId('necessity').innerText =  `$${Math.round(total * .5)}`
+    getId('want').innerText = `$${Math.round(total * .3)}`;
+    getId('savi').innerText = `$${Math.round(total * .2)}`;
 });
 
 
@@ -189,20 +192,6 @@ getId(`form1`).addEventListener('submit', function (input) {
 
     var ogfood = parseFloat(document.getId('food1').value);
     wantArray1.push(parseFloat(ogfood));
-
-
-    getId('cursav').innerText = ogsav;
-    getId('currer').innerText = ogretir;
-    getId('curcase').innerText = ogextra;
-    getId('curtrans').innerText = oghob;
-    getId('curfood').innerText = ogfood;
-    getId('curhob').innerText = ogout;
-    getId('curtrans').innerText = oghob;
-    getId('curlif').innerText = ogtrans;
-    getId('curnes').innertext = oghousing;
-    getId('curhou').innertext = ogutil;
-    getId('curin').innertext = oginsur;
-    getId('curdeb').innertext = ogdebt;
 
     wantSum = 0;
 
@@ -259,8 +248,9 @@ getId(`form1`).addEventListener('submit', function (input) {
         }
     }
 
-    let totSum = Math.round(needSum + wantSum + savSum);
+    let nonBudgSums = [wantSum, needSum, savSum];
 
+    return nonBudgSums;
 });
 
 getId(`form2`).addEventListener('submit', function (input) {
@@ -285,19 +275,6 @@ getId(`form2`).addEventListener('submit', function (input) {
     var ogfood = parseFloat(document.getId('food2').value);
     wantArray1.push(parseFloat(ogfood));
 
-
-    getId('newsav').innerText = ogsav;
-    getId('newrer').innerText = ogretir;
-    getId('newcase').innerText = ogextra;
-    getId('newtrans').innerText = oghob;
-    getId('newfood').innerText = ogfood;
-    getId('newhob').innerText = ogout;
-    getId('newtrans').innerText = oghob;
-    getId('newlif').innerText = ogtrans;
-    getId('newnes').innertext = oghousing;
-    getId('newhou').innertext = ogutil;
-    getId('newin').innertext = oginsur;
-    getId('newdeb').innertext = ogdebt;
 
     wantSum = 0;
 
@@ -354,15 +331,11 @@ getId(`form2`).addEventListener('submit', function (input) {
         }
     }
 
-    let totSum = Math.round(needSum + wantSum + savSum);
+    let budgSum = [needSum + wantSum + savSum];
 
-    let nPie1 = Math.round(totSum / needSum);
-    let wPie1 = Math.round(totSum / wantSum);
-    let sPie1 = Math.round(totSum / savSum);
+    return budgSum;
 
-})
-
-
+});
 
 
 
