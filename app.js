@@ -163,7 +163,7 @@ getId('incform').addEventListener('submit', function firstIncome(input) {
 getId(`form1`).addEventListener('submit', function (input) {
     input.preventDefault();
 
-     
+
     //collect want values and push them into an returnable array for future use
     function wants() {
         var wantArray1 = [];
@@ -391,7 +391,7 @@ getId(`form2`).addEventListener('submit', function budgetPlan(input) {
 });
 
 //save the returns as accessible variables
-var ogneeds = need();
+var ogneeds = needs();
 var ogwants = want();
 var ogsaving = sav();
 
@@ -458,18 +458,20 @@ function forHouse() {
 
 //iterate through both arrays to change the innertext accordingly for the first category
 function oldBudgReplace() {
-    let oldlabels = [getId('curhou'), getId('curut'), getId('curin'), getId('curdeb'), getId('curtrans'), getId('curhob'), getId('curfood'), getId('cursav'), getId('currer'), getId('curcase')];
+    let oldlabels = [getId('curhou'), getId('curut'), getId('curin'), getId('curdeb'), getId('curtrans'), 
+    getId('curhob'), getId('curfood'), getId('cursav'), getId('currer'), getId('curcase')];
     for (i = 0; i < oldlabels.length; i++) {
-            oldlabels[i].innerText = ogArray()[i];
+        oldlabels[i].innerText = ogArray()[i];
     }
 }
 
 //iterate through both arrays to change the innertext accordingly for the second category
-function newBudgReplace(){
-    let newlabels = [getId('newhou'), getId('newut'), getId('newin'), getId('newdeb'), getId('newtrans'), getId('newhob'), getId('newfood'), getId('newsav'), getId('newrer'), getId('newcase')];
+function newBudgReplace() {
+    let newlabels = [getId('newhou'), getId('newut'), getId('newin'), getId('newdeb'), getId('newtrans'), 
+    getId('newhob'), getId('newfood'), getId('newsav'), getId('newrer'), getId('newcase')];
     for (i = 0; i < newlabels.length; i++) {
         newlabels[i].innerText = newArray()[i];
-}
+    }
 }
 
 //add the inputs and stuff only when the summary button is clicked
