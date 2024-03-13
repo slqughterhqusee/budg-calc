@@ -115,28 +115,7 @@ function buildList(jobs) {
 
 //^^ joblist code
 
-let frame = document.getElementsByClassName('frame');
-let frames = [frame];
-console.log(frame);
-console.log(frames);
-
-function nextFrame() {
-    for (i = 0; i < frame.length; i++) {
-        switch (frame) {
-            case 0:
-                getId('frame0').classList.remove('hide');
-                break;
-
-            case 1:
-                getId('frame1').classList.remove('hide');
-                break;
-        }
-    }
-}
-
-//^^frame functioning....
-
-getId('incform').addEventListener('submit', function (input) {
+getId('incform').addEventListener('submit', function firstIncome(input) {
     input.preventDefault();
     var inputArray = [];
 
@@ -162,9 +141,11 @@ getId('incform').addEventListener('submit', function (input) {
     getId('need').innerText = `$${Math.round(total * .5)}`;
     getId('want').innerText = `$${Math.round(total * .3)}`;
     getId('savings').innerText = `$${Math.round(total * .2)}`;
-    getId('necessity').innerText =  `$${Math.round(total * .5)}`
-    getId('want').innerText = `$${Math.round(total * .3)}`;
+    getId('necessity').innerText = `$${Math.round(total * .5)}`
+    getId('life').innerText = `$${Math.round(total * .3)}`;
     getId('savi').innerText = `$${Math.round(total * .2)}`;
+
+    return total;
 });
 
 
@@ -173,173 +154,310 @@ getId('incform').addEventListener('submit', function (input) {
 
 getId(`form1`).addEventListener('submit', function (input) {
     input.preventDefault();
-    var wantArray1 = [];
 
-    var ogtrans = parseFloat(document.getId('trans1').value);
-    wantArray1.push(parseFloat(ogtrans));
+    // create an array with all of the values in the want section   
 
+    function wants() {
+        var wantArray1 = [];
 
+        var ogtrans = document.getId('trans1').value;
+        wantArray1.push(parseFloat(ogtrans));
 
-    var oghob = parseFloat(document.getId('hobb1').value);
-    wantArray1.push(parseFloat(oghob));
+        var oghob = parseFloat(document.getId('hobb1').value);
+        wantArray1.push(parseFloat(oghob));
 
+        var ogout = parseFloat(document.getId('out1').value);
+        wantArray1.push(parseFloat(ogout));
 
+        var ogfood = parseFloat(document.getId('food1').value);
+        wantArray1.push(parseFloat(ogfood));
 
-    var ogout = parseFloat(document.getId('out1').value);
-    wantArray1.push(parseFloat(ogout));
+        for (i = 0; i < wantArray1; i++) {
+            if (isNaN(wantArray1[i])) {
+                wantArray1[i] = 0;
+            }
+        }
 
+        return wantArray1;
 
+    }
 
-    var ogfood = parseFloat(document.getId('food1').value);
-    wantArray1.push(parseFloat(ogfood));
+    function sav() {
+        var savArray1 = [];
 
-    wantSum = 0;
+        var ogsav = parseFloat(document.getId('sav1').value);
+        savArray1.push(parseFloat(ogsav));
 
-    for (i = 0; i < wantArray1.length; i++) {
-        if (!isNaN(wantArray1[i])) {
-            console.log(wantArray1[i]);
-            wantSum += wantArray1[i];
+        var ogretir = parseFloat(document.getId('retir1').value);
+        savArray1.push(parseFloat(ogretir));
 
+        var ogextra = parseFloat(document.getId('extra1').value);
+        savArray1.push(parseFloat(ogextra));
+
+        for (i = 0; i < savArray1; i++) {
+            if (isNaN(savArray1[i])) {
+                savArray1[i] = 0;
+            }
+        }
+
+        return savArray1;
+    }
+
+    function needs() {
+
+        var needArray1 = [];
+
+        var oghousing = parseFloat(document.getId('housing1').value);
+        needArray1.push(parseFloat(oghousing));
+
+        var ogutil = parseFloat(document.getId('util1').value);
+        needArray1.push(parseFloat(ogutil));
+
+        var oginsur = parseFloat(document.getId('insur1').value);
+        needArray1.push(parseFloat(oginsur));
+
+        var ogdebt = parseFloat(document.getId('debt1').value);
+        needArray1.push(parseFloat(ogdebt));
+
+        for (i = 0; i < needArray1; i++) {
+            if (isNaN(needArray1[i])) {
+                needArray1[i] = 0;
+            }
+        }
+
+        return needArray1;
+    }
+
+    function needsTot() {
+
+        let needSum = 0;
+
+        for (i = 0; i < needs().length; i++) {
+            if (!isNaN(needs()[i])) {
+                console.log(needs()[i]);
+                needSum += needs()[i];
+
+            }
+        }
+        return needSum;
+    }
+
+    function wantsTot() {
+        let wantSum = 0;
+
+        for (i = 0; i < wants().length; i++) {
+            if (!isNaN(wants()[i])) {
+                console.log(wants()[i]);
+                wantSum += wants()[i];
+            }
+        }
+        return wantSum;
+    }
+
+    function savTot() {
+
+        let savSum = 0;
+
+        for (i = 0; i < sav().length; i++) {
+            if (!isNaN(sav()[i])) {
+                console.log(sav()[i]);
+                savSum += sav()[i];
+
+            }
         }
     }
 
-    var savArray1 = [];
-
-    var ogsav = parseFloat(document.getId('sav1').value);
-    savArray1.push(parseFloat(ogsav));
-
-    var ogretir = parseFloat(document.getId('retir1').value);
-    savArray1.push(parseFloat(ogretir));
-
-    var ogextra = parseFloat(document.getId('extra1').value);
-    savArray1.push(parseFloat(ogextra));
-
-    savSum = 0;
-
-    for (i = 0; i < savArray1.length; i++) {
-        if (!isNaN(savArray1[i])) {
-            console.log(wantArray1[i]);
-            savSum += savArray1[i];
-
-        }
-    }
-
-    var needArray1 = [];
-
-    var oghousing = parseFloat(document.getId('housing1').value);
-    needArray1.push(parseFloat(oghousing));
-
-    var ogutil = parseFloat(document.getId('util1').value);
-    needArray1.push(parseFloat(ogutil));
-
-    var oginsur = parseFloat(document.getId('insur1').value);
-    needArray1.push(parseFloat(oginsur));
-
-    var ogdebt = parseFloat(document.getId('debt1').value);
-    needArray1.push(parseFloat(ogdebt));
-
-    needSum = 0;
-
-    for (i = 0; i < needArray1.length; i++) {
-        if (!isNaN(needArray1[i])) {
-            console.log(wantArray1[i]);
-            needSum += needArray1[i];
-
-        }
-    }
-
-    let nonBudgSums = [wantSum, needSum, savSum];
+    let nonBudgSums = wantsTot() + needsTot() + savTot();
 
     return nonBudgSums;
 });
 
-getId(`form2`).addEventListener('submit', function (input) {
+getId(`form2`).addEventListener('submit', function budgetPlan(input) {
     input.preventDefault();
-    var wantArray1 = [];
+    //make a function with a return i can use later
+    function newWants() {
+        var newWantArray1 = [];
 
-    var ogtrans = parseFloat(document.getId('trans2').value);
-    wantArray1.push(parseFloat(ogtrans));
+        var newtrans = parseFloat(document.getId('trans2').value);
+        newWantArray1.push(parseFloat(newtrans));
+
+        var newhob = parseFloat(document.getId('hobb2').value);
+        newWantArray1.push(parseFloat(newhob));
+
+        var newout = parseFloat(document.getId('out2').value);
+        newWantArray1.push(parseFloat(newout));
+
+        var newfood = parseFloat(document.getId('food2').value);
+        newWantArray1.push(parseFloat(newfood));
+
+        return newWantArray1;
+    };
 
 
+    function newSavs() {
 
-    var oghob = parseFloat(document.getId('hobb2').value);
-    wantArray1.push(parseFloat(oghob));
+        var newSavArray1 = [];
 
+        var newsav = parseFloat(document.getId('sav2').value);
+        newSavArray1.push(parseFloat(newsav));
 
+        var newretir = parseFloat(document.getId('retir2').value);
+        newSavArray1.push(parseFloat(newretir));
 
-    var ogout = parseFloat(document.getId('out2').value);
-    wantArray1.push(parseFloat(ogout));
+        var newextra = parseFloat(document.getId('extra2').value);
+        newSavArray1.push(parseFloat(newextra));
 
+        return newSavArray1;
+    };
 
+    function newNeeds() {
 
-    var ogfood = parseFloat(document.getId('food2').value);
-    wantArray1.push(parseFloat(ogfood));
+        var newNeedArray1 = [];
 
+        var newhousing = parseFloat(document.getId('housing2').value);
+        newNeedArray1.push(parseFloat(newhousing));
 
-    wantSum = 0;
+        var newutil = parseFloat(document.getId('util2').value);
+        newNeedArray1.push(parseFloat(newutil));
 
-    for (i = 0; i < wantArray1.length; i++) {
-        if (!isNaN(wantArray1[i])) {
-            console.log(wantArray1[i]);
-            wantSum += wantArray1[i];
+        var newinsur = parseFloat(document.getId('insur2').value);
+        newNeedArray1.push(parseFloat(newinsur));
 
-        }
+        var newdebt = parseFloat(document.getId('deb2').value);
+        newNeedArray1.push(parseFloat(newdebt));
+
+        return newNeedArray1;
     }
 
-    var savArray1 = [];
 
-    var ogsav = parseFloat(document.getId('sav2').value);
-    savArray1.push(parseFloat(ogsav));
+    function newWantsTot() {
+        let newWantSum = 0;
 
-    var ogretir = parseFloat(document.getId('retir2').value);
-    savArray1.push(parseFloat(ogretir));
+        for (i = 0; i < newWants().length; i++) {
+            if (!isNaN(newWants()[i])) {
+                console.log(newWants()[i]);
+                newWantSum += newWants()[i];
 
-    var ogextra = parseFloat(document.getId('extra2').value);
-    savArray1.push(parseFloat(ogextra));
-
-    savSum = 0;
-
-    for (i = 0; i < savArray1.length; i++) {
-        if (!isNaN(savArray1[i])) {
-            console.log(wantArray1[i]);
-            savSum += savArray1[i];
-
+            }
         }
+
+        return newWantSum;
+    };
+
+    function newNesTot() {
+        let newNeedSum = 0;
+        for (i = 0; i < newNeeds().length; i++) {
+            if (!isNaN(newNeeds()[i])) {
+                console.log(newNeeds()[i]);
+                newNeedSum += newNeeds()[i];
+
+            }
+        }
+        return newNeedSum;
     }
 
-    var needArray1 = [];
+    function newSavTot() {
+        let newSavSum = 0;
 
-    var oghousing = parseFloat(document.getId('housing2').value);
-    needArray1.push(parseFloat(oghousing));
+        for (i = 0; i < newSavs().length; i++) {
+            if (!isNaN(newSavs()[i])) {
+                console.log(newSavs()[i]);
+                newSavSum += newSavs()[i];
 
-    var ogutil = parseFloat(document.getId('util2').value);
-    needArray1.push(parseFloat(ogutil));
-
-    var oginsur = parseFloat(document.getId('insur2').value);
-    needArray1.push(parseFloat(oginsur));
-
-    var ogdebt = parseFloat(document.getId('deb2').value);
-    needArray1.push(parseFloat(ogdebt));
-
-    needSum = 0;
-
-    for (i = 0; i < needArray1.length; i++) {
-        if (!isNaN(needArray1[i])) {
-            console.log(wantArray1[i]);
-            needSum += needArray1[i];
-
+            }
         }
+        return newSavSum;
     }
 
-    let budgSum = [needSum + wantSum + savSum];
+
+    let budgSum = newNesTot() + newSavTot() + newWantsTot();
 
     return budgSum;
-
 });
 
 
+var ogneeds = need();
+var ogwants = want();
+var ogsaving = sav();
+
+function ogArray() {
+    let ogArray = 0;
+    for (i = 0; i < ogneeds.length; i++) {
+        ogArray += ogneeds[i];
+    }
+    for (i = 0; i < ogwants.length; i++) {
+        ogArray += ogwants[i];
+    }
+    for (i = 0; i < ogsaving.length; i++) {
+        ogArray += ogsaving[i];
+    }
+    return ogArray;
+}
 
 
+//^^ arrays pulled from form 1
+
+var newWants = newWants();
+var newNeeds = newNeeds();
+var newSav = newSav();
+
+
+
+function newArray() {
+    let newArray = 0;
+    for (i = 0; i < newNeeds.length; i++) {
+        newArray += newNeeds[i];
+    }
+    for (i = 0; i < newWants.length; i++) {
+        newArray += newWants[i];
+    }
+    for (i = 0; i < newSav.length; i++) {
+        newArray += newSav[i];
+    }
+    return newArray;
+}
+// ^^ arrays pulled from form 2
+
+var budgTotal = budgetPlan();
+var startPoint = firstIncome();
+
+function budgDetermine() {
+    if (Math.round(startPoint - budgTotal) > 0) {
+        getId('ovUn').innerText = ` $${Math.round(startPoint - budgTotal)} under `;
+    }
+    else if (Math.round(startPoint - budgTotal) === 0) {
+        getId('ovUn').innerText = ` exactly on `;
+    }
+    else {
+        getId('ovUn'.innerText = ` $${Math.round(startPoint - budgTotal)} over`);
+    }
+};
+
+function forHouse() {
+    getId('houBudg').innerText = ` $${Math.round(startPoint * .3)}`;
+}
+
+function oldBudgReplace() {
+    let oldlabels = [getId('curhou'), getId('curut'), getId('curin'), getId('curdeb'), getId('curtrans'), getId('curhob'), getId('curfood'), getId('cursav'), getId('currer'), getId('curcase')];
+    for (i = 0; i < oldlabels.length; i++) {
+            oldlabels[i].innerText = ogArray()[i];
+    }
+}
+
+function newBudgReplace(){
+    let newlabels = [getId('newhou'), getId('newut'), getId('newin'), getId('newdeb'), getId('newtrans'), getId('newhob'), getId('newfood'), getId('newsav'), getId('newrer'), getId('newcase')];
+    for (i = 0; i < newlabels.length; i++) {
+        newlabels[i].innerText = newArray()[i];
+}
+}
+
+getId('summaryBtn').addEventListener('click', function (input) {
+    input.preventDefault();
+    budgDetermine();
+    forHouse();
+    oldBudgReplace();
+    newBudgReplace();
+})
 
 
 // ^^ pie stuff
