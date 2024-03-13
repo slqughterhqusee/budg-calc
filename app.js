@@ -115,17 +115,23 @@ function buildList(jobs) {
 
 //^^ joblist code
 
+
+//gets information from the monthly income input
 getId('incform').addEventListener('submit', function firstIncome(input) {
     input.preventDefault();
+
+    //create an empty array for data return to go in
     var inputArray = [];
 
+
+    //retrieve info and place it in array
     var salary = parseFloat(getId('salary').value);
     inputArray.push(parseFloat(salary));
 
     var addinc = parseFloat(getId('addinc').value);
     inputArray.push(parseFloat(addinc));
 
-
+    //iterate through array to get the total amount of income
     finSum = 0;
 
     for (i = 0; i < inputArray.length; i++) {
@@ -136,8 +142,10 @@ getId('incform').addEventListener('submit', function firstIncome(input) {
         }
     }
 
+    //deduct taxes
     let total = Math.round(finSum * .3265);
 
+    //have the 50/30/20 appear where it needs to on the page
     getId('need').innerText = `$${Math.round(total * .5)}`;
     getId('want').innerText = `$${Math.round(total * .3)}`;
     getId('savings').innerText = `$${Math.round(total * .2)}`;
@@ -151,12 +159,12 @@ getId('incform').addEventListener('submit', function firstIncome(input) {
 
 // ^^ input grab
 
-
+//grab information from the first form
 getId(`form1`).addEventListener('submit', function (input) {
     input.preventDefault();
 
-    // create an array with all of the values in the want section   
-
+     
+    //collect want values and push them into an returnable array for future use
     function wants() {
         var wantArray1 = [];
 
@@ -179,9 +187,9 @@ getId(`form1`).addEventListener('submit', function (input) {
         }
 
         return wantArray1;
-
     }
 
+    //same as above for savings values
     function sav() {
         var savArray1 = [];
 
@@ -203,6 +211,7 @@ getId(`form1`).addEventListener('submit', function (input) {
         return savArray1;
     }
 
+    //same as above for needs values
     function needs() {
 
         var needArray1 = [];
@@ -228,6 +237,7 @@ getId(`form1`).addEventListener('submit', function (input) {
         return needArray1;
     }
 
+    //total all the arrays individually so they can be added together
     function needsTot() {
 
         let needSum = 0;
@@ -267,13 +277,17 @@ getId(`form1`).addEventListener('submit', function (input) {
         }
     }
 
+    //add the results together to be used for later operation
     let nonBudgSums = wantsTot() + needsTot() + savTot();
 
     return nonBudgSums;
 });
 
+
+//grab inputs from the second form
 getId(`form2`).addEventListener('submit', function budgetPlan(input) {
     input.preventDefault();
+
     //make a function with a return i can use later
     function newWants() {
         var newWantArray1 = [];
@@ -293,7 +307,7 @@ getId(`form2`).addEventListener('submit', function budgetPlan(input) {
         return newWantArray1;
     };
 
-
+    //same as above
     function newSavs() {
 
         var newSavArray1 = [];
@@ -310,6 +324,7 @@ getId(`form2`).addEventListener('submit', function budgetPlan(input) {
         return newSavArray1;
     };
 
+    // same as above
     function newNeeds() {
 
         var newNeedArray1 = [];
@@ -329,7 +344,7 @@ getId(`form2`).addEventListener('submit', function budgetPlan(input) {
         return newNeedArray1;
     }
 
-
+    //sum up the previously made arrays for total use
     function newWantsTot() {
         let newWantSum = 0;
 
@@ -375,11 +390,12 @@ getId(`form2`).addEventListener('submit', function budgetPlan(input) {
     return budgSum;
 });
 
-
+//save the returns as accessible variables
 var ogneeds = need();
 var ogwants = want();
 var ogsaving = sav();
 
+// create an array of all the original inputs
 function ogArray() {
     let ogArray = 0;
     for (i = 0; i < ogneeds.length; i++) {
@@ -397,11 +413,11 @@ function ogArray() {
 
 //^^ arrays pulled from form 1
 
+
+//do the same thing as above but with the new budget inputs
 var newWants = newWants();
 var newNeeds = newNeeds();
 var newSav = newSav();
-
-
 
 function newArray() {
     let newArray = 0;
@@ -418,9 +434,11 @@ function newArray() {
 }
 // ^^ arrays pulled from form 2
 
+//save the results of the income stuff as well
 var budgTotal = budgetPlan();
 var startPoint = firstIncome();
 
+// display whether you're over or under budget
 function budgDetermine() {
     if (Math.round(startPoint - budgTotal) > 0) {
         getId('ovUn').innerText = ` $${Math.round(startPoint - budgTotal)} under `;
@@ -433,10 +451,12 @@ function budgDetermine() {
     }
 };
 
+//display 30% of the income for housing stuff
 function forHouse() {
     getId('houBudg').innerText = ` $${Math.round(startPoint * .3)}`;
 }
 
+//iterate through both arrays to change the innertext accordingly for the first category
 function oldBudgReplace() {
     let oldlabels = [getId('curhou'), getId('curut'), getId('curin'), getId('curdeb'), getId('curtrans'), getId('curhob'), getId('curfood'), getId('cursav'), getId('currer'), getId('curcase')];
     for (i = 0; i < oldlabels.length; i++) {
@@ -444,6 +464,7 @@ function oldBudgReplace() {
     }
 }
 
+//iterate through both arrays to change the innertext accordingly for the second category
 function newBudgReplace(){
     let newlabels = [getId('newhou'), getId('newut'), getId('newin'), getId('newdeb'), getId('newtrans'), getId('newhob'), getId('newfood'), getId('newsav'), getId('newrer'), getId('newcase')];
     for (i = 0; i < newlabels.length; i++) {
@@ -451,6 +472,7 @@ function newBudgReplace(){
 }
 }
 
+//add the inputs and stuff only when the summary button is clicked
 getId('summaryBtn').addEventListener('click', function (input) {
     input.preventDefault();
     budgDetermine();
