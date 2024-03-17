@@ -53,78 +53,36 @@
             </section>
             <form class="p1 income" id="incform">
                 <label for="salary">Current Pre-Tax Annual Salary:</label><input name="salary" type="text" id="salary">
-                <label for="addInc">Additional Income (Monthly): </label><input name="addInc" type="text" id="addinc">
+                <label for="addInc">Additional Income (Monthly): </label><input name="addInc" type="text" id="addInc">
                 <input type="submit" class="submit">
             </form>
-            <section class="p1 hide frame" id="frame0">
-                <h2>
-                    How much are you currently spending?
-                </h2>
-                <section class="row">
-                    <form id="form1">
-                        <section class="expenses">
-                            <h3> Necessities </h3>
-                            <label>Housing <br><input type="text"></label>
-                            <label>Utilities <br><input type="text"></label>
-                            <label>Insurance <br><input type="text"></label>
-                            <label>Debt Payments<br> <input type="text"></label>
-                        </section>
-
-                        <section class="expenses">
-                            <h3> Life </h3>
-                            <label>Transport<br> <input type="text"></label>
-                            <label>Hobbies <br> <input type="text"></label>
-                            <label>Going Out <br> <input type="text"></label>
-                            <label>Food <br> <input type="text"></label>
-                        </section>
-
-                        <section class="expenses">
-                            <h3> Savings </h3>
-                            <label>Savings <br> <input type="text"></label>
-                            <label>Retirement Fund <br><input type="text"></label>
-                            <label>Just-In-Case<br> <input type="text"></label>
-                            <input type="submit" class="submit">
-                        </section>
-                    </form>
-                    <section class="expenses note">
-                        <p>
-                            Leaving things you don't know off the top of your head blank is OK!
-                        </p>
-                        <p>
-                            This will not affect your budgeting results.
-                        </p>
-                    </section>
-                </section>
-            </section>
-            <br><br>
-
             <section class="p1 frame hide" id="frame1">
                 <h2>
                     How are you going to change your spending?
                 </h2>
                 <section class="row">
-                    <form id="form2">
+                    <form id="form1">
                         <section class="expenses">
                             <h3> Necessities </h3>
-                            <label>Housing <br><input type="text" id="housing2"></label>
-                            <label>Utilities <br><input type="text" id="util2"></label>
-                            <label>Insurance <br><input type="text" id="insur2"></label>
-                            <label>Debt Payments<br> <input type="text" id="debt2"></label>
+                            <label>Housing <br><input type="text" id="housing"></label>
+                            <label>Utilities <br><input type="text" id="util"></label>
+                            <label>Insurance <br><input type="text" id="insur"></label>
+                            <label>Debt Payments<br> <input type="text" id="debt"></label>
                         </section>
 
                         <section class="expenses">
                             <h3> Life </h3>
-                            <label>Transport<br> <input type="text" id="trans2"></label>
-                            <label>Hobbies <br><input type="text" id="hobb2"></label>
-                            <label>Going Out <br> <input type="text" id="out2"></label>
-                            <label>Food <br> <input type="text" id="food2"></label>
+                            <label>Transport<br> <input type="text" id="trans"></label>
+                            <label>Hobbies <br><input type="text" id="hobb"></label>
+                            <label>Going Out <br> <input type="text" id="out"></label>
+                            <label>Food <br> <input type="text" id="food"></label>
                         </section>
 
                         <section class="expenses">
                             <h3> Savings </h3>
-                            <label>Savings <br> <input type="text" id="sav2"></label>
-                            <label>Retirement Fund <br><input type="text" id="retir2"></label>
-                            <label>Just-In-Case<br> <input type="text" id="extra2"></label>
+                            <label>Savings <br> <input type="text" id="sav"></label>
+                            <label>Retirement Fund <br><input type="text" id="retir"></label>
+                            <label>Just-In-Case<br> <input type="text" id="extra"></label>
                             <input type="submit" class="submit">
                         </section>
                     </form>
@@ -143,10 +101,6 @@
 
                         <h3>Savings</h3>
                         <span id="savings"></span>
-
-                        <button id="summaryBtn">
-                            Summary
-                        </button>
                     </section>
                 </section>
 
@@ -209,107 +163,6 @@
                 </section>
             </section>
         </section>
-    </section>
-    <section class="end">
-        <section class="results">
-
-            <section class="result1 center">
-                <section class="spending p1">
-                    <p>Your Current Spending</p>
-                </section>
-
-                <section class="p1 table numtable">
-                    <section id="table1" class="table1">
-                        <!-- section1 -->
-                        <h3>Necessities</h3>
-                        <p>Housing</p>
-                        <p>Utilities</p>
-                        <p>Insurance</p>
-                        <p>Debt Payments</p>
-                        <!-- section2 -->
-                        <h3>Life</h3>
-                        <p>Transport</p>
-                        <p>Hobbies</p>
-                        <p>Entertainment</p>
-                        <p>Food</p>
-                        <!-- section3 -->
-                        <h3>Savings</h3>
-                        <p>Savings</p>
-                        <p>Retirement Fund</p>
-                        <p>Just-In-Case</p>
-                    </section>
-                    <section id="table2" class="table2">
-                        <hr>
-                        <span id="curhou"></span>
-                        <span id="curut"></span>
-                        <span id="curin"></span>
-                        <span id="curdeb"></span>
-                        <!-- section2 -->
-                        <hr>
-                        <span id="curtrans"></span>
-                        <span id="curhob"></span>
-                        <span id="curout"></span>
-                        <span id="curfood"></span>
-                        <!-- section3 -->
-                        <hr>
-                        <span id="cursav"></span>
-                        <span id="currer"></span>
-                        <span id="curcase"></span>
-                    </section>
-                </section>
-            </section>
-
-            <section class="result2 center">
-                <section class="spending p1 ">
-                    <p>Your Budgeted Spending</p>
-                </section>
-                <section class="p1 table numtable">
-                    <section id="table1" class="table1">
-                        <!-- section1 -->
-                        <h3>Necessities</h3>
-                        <p>Housing</p>
-                        <p>Utilities</p>
-                        <p>Insurance</p>
-                        <p>Debt Payments</p>
-                        <!-- section2 -->
-                        <h3>Life</h3>
-                        <p>Transport</p>
-                        <p>Hobbies</p>
-                        <p>Entertainment</p>
-                        <p>Food</p>
-                        <!-- section3 -->
-                        <h3>Savings</h3>
-                        <p>Savings</p>
-                        <p>Retirement Fund</p>
-                        <p>Just-In-Case</p>
-                    </section>
-                    <section id="table2" class="table2">
-                        <hr>
-                        <span id="newhou"></span>
-                        <span id="newut"></span>
-                        <span id="newin"></span>
-                        <span id="newdeb"></span>
-                        <!-- section2 -->
-                        <hr>
-                        <span id="newtrans"></span>
-                        <span id="newhob"></span>
-                        <span id="newout"></span>
-                        <span id="newfood"></span>
-                        <!-- section3 -->
-                        <hr>
-                        <span id="newsav"></span>
-                        <span id="newrer"></span>
-                        <span id="newcase"></span>
-                    </section>
-                </section>
-
-            </section>
-        </section>
-    </section>
-    <section class="back">
-        <a href="index.html">
-            <button class="backBtn" id="backBtn">Back</button>
-        </a>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="app.js"></script>
