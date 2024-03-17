@@ -163,6 +163,8 @@ getId('incform').addEventListener('submit', function firstIncome(input) {
 getId(`form1`).addEventListener('submit', function (input) {
     input.preventDefault();
 
+
+
     //collect want values and push them into an returnable array for future use
         var wantArray1 = [];
 

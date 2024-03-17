@@ -143,7 +143,7 @@ form {
     display: flex;
     justify-content: space-around;
     flex-flow: row wrap;
-    width: 90%;
+    width: 94%;
 }
 
 .jobs {
@@ -164,6 +164,10 @@ form {
 }
 
 #ovUn {
+    color: #1CBE84;
+}
+
+#houBudg{
     color: #1CBE84;
 }
 
