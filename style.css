@@ -339,6 +339,10 @@ hr {
     margin-bottom: .5em;
 }
 
+.hide {
+    display: none;
+}
+
 /*for phone */
 @media only screen and (max-width:640px){
     .header {

@@ -35,7 +35,7 @@
                 </div>
 
                 <section class="leftLabel">
-                    <p>This is how your planned spending looks</p>
+                    <p>The ideal budget looks like this</p>
                 </section>
 
             </section>
@@ -56,7 +56,7 @@
                 <label for="addInc">Additional Income (Monthly): </label><input name="addInc" type="text" id="addInc">
                 <input type="submit" class="submit">
             </form>
-            <section class="p1 frame hide" id="frame1">
+            <section class="p1 hide" id="frame1">
                 <h2>
                     How are you going to change your spending?
                 </h2>
@@ -101,6 +101,8 @@
 
                         <h3>Savings</h3>
                         <span id="savings"></span>
+
+                        <span id="notice"></span>
                     </section>
                 </section>
 
@@ -111,55 +113,57 @@
 
     </section>
 
-    <section class="nav header">
-        <h1>Your Budgeting Summary</h1>
-    </section>
-    <section class="middlewrapper">
-        <section class="middle p1">
-            <section class="values">
-                <section id="one" class="mainval">
-                    <h2>50%</h2>
-                    <p>Necessity</p>
-                    <span id="necessity"></span>
+    <section class="hide" id="hide">
+        <section class="nav header">
+            <h1>Your Budgeting Summary</h1>
+        </section>
+        <section class="middlewrapper">
+            <section class="middle p1">
+                <section class="values">
+                    <section id="one" class="mainval">
+                        <h2>50%</h2>
+                        <p>Necessity</p>
+                        <span id="necessity"></span>
+                    </section>
+                    <section id="two" class="mainval">
+                        <h2>30%</h2>
+                        <p>Life</p>
+                        <span id="life"></span>
+                    </section>
+                    <section id="three" class="mainval">
+                        <h2>20%</h2>
+                        <p>Savings</p>
+                        <span id="savi"></span>
+                    </section>
                 </section>
-                <section id="two" class="mainval">
-                    <h2>30%</h2>
-                    <p>Life</p>
-                    <span id="life"></span>
+                <section class="budgetOver" id="middleValue">
+                    <h2 id="sumBudget">You are <span id="ovUn"></span> budget</h2>
                 </section>
-                <section id="three" class="mainval">
-                    <h2>20%</h2>
-                    <p>Savings</p>
-                    <span id="savi"></span>
-                </section>
-            </section>
-            <section class="budgetOver" id="middleValue">
-                <h2 id="sumBudget">You are <span id="ovUn"></span> budget</h2>
-            </section>
-            <section class="middlebottom">
-                <section class="side">
-                    <p>You should be spending no more than <span id="houBudg"></span> on housing.
-                        <br><br>
-                        If you're spending too much on transport, try strategically going to places where you can
-                        complete multiple tasks with minimal driving.
-                        <br><br>
-                        If you're running low on money, decrease the amount you're putting in savings.
-                        <br><br>
-                        Try maximising the products you use in your hobbies to make less purchases: Save the scraps!
-                    </p>
-                </section>
-                <img src="icon.svg" class="down">
-                <section class="side">
-                    <p>Utilise bank rewards.
-                        <br><br>
-                        Money is wasted on uneaten food. When in a tight spot, focus on meal planning foods you know
-                        you'll like to make the most of leftovers!
-                        <br><br>
-                        Keep the lights off until it gets dark, and only keep them on when you're in the room.
-                        <br><br>
-                        Invest in entertainment that charges monthly (such as a single streaming service) and meet with
-                        friends at home instead of spending money out!
-                    </p>
+                <section class="middlebottom">
+                    <section class="side">
+                        <p>You should be spending no more than <span id="houBudg"></span> on housing.
+                            <br><br>
+                            If you're spending too much on transport, try strategically going to places where you can
+                            complete multiple tasks with minimal driving.
+                            <br><br>
+                            If you're running low on money, decrease the amount you're putting in savings.
+                            <br><br>
+                            Try maximising the products you use in your hobbies to make less purchases: Save the scraps!
+                        </p>
+                    </section>
+                    <section class="side">
+                        <p>Utilise bank rewards.
+                            <br><br>
+                            Money is wasted on uneaten food. When in a tight spot, focus on meal planning foods you know
+                            you'll like to make the most of leftovers!
+                            <br><br>
+                            Keep the lights off until it gets dark, and only keep them on when you're in the room.
+                            <br><br>
+                            Invest in entertainment that charges monthly (such as a single streaming service) and meet
+                            with
+                            friends at home instead of spending money out!
+                        </p>
+                    </section>
                 </section>
             </section>
         </section>

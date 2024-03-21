@@ -155,6 +155,7 @@ function firstIncome(input) {
     getId('life').innerText = `$${Math.round(total * .3).toLocaleString()}`;
     getId('savi').innerText = `$${Math.round(total * .2).toLocaleString()}`;
     incomeInput = total;
+    getId('frame1').classList.remove('hide');
     return total;
 };
 
@@ -271,14 +272,20 @@ getId(`form1`).addEventListener('submit', function (input) {
     }
 
     let compSum = necSum + needSum + saviSum;
+    let difference = incomeInput-compSum;
 
-    if(compSum > incomeInput){
-        getId('ovUn').innerText = `$${Math.round(parseInt(compSum-incomeInput)).toLocaleString()} under`;
+    if(difference < incomeInput){
+        getId('ovUn').innerText = `$${Math.abs(Math.round(parseInt(difference))).toLocaleString()} over`;
     }
     else {
-        getId('ovUn').innerText = `$${Math.round(parseInt(compSum-incomeInput)).toLocaleString()} over`;
+        getId('ovUn').innerText = `$${Math.abs(Math.round(parseInt(difference))).toLocaleString()} under`;
     }
 
+    getId('houBudg').innerText = `$${Math.round(incomeInput*.3).toLocaleString()}`;
+
+    getId('notice').innerText = "Scroll for more info!"
+    getId('hide').classList.remove('hide');
+   
 
     return nonBudgSums;
 });
