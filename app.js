@@ -115,9 +115,11 @@ function buildList(jobs) {
 
 //^^ joblist code
 
-
+let incomeInput;
 //gets information from the monthly income input
-getId('incform').addEventListener('submit', function firstIncome(input) {
+getId('incform').addEventListener('submit', (e) => firstIncome(e));
+
+function firstIncome(input) {
     input.preventDefault();
 
     //create an empty array for data return to go in
@@ -152,9 +154,9 @@ getId('incform').addEventListener('submit', function firstIncome(input) {
     getId('necessity').innerText = `$${Math.round(total * .5).toLocaleString()}`
     getId('life').innerText = `$${Math.round(total * .3).toLocaleString()}`;
     getId('savi').innerText = `$${Math.round(total * .2).toLocaleString()}`;
-
+    incomeInput = total;
     return total;
-});
+};
 
 
 // ^^ input grab
